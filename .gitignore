@@ -1,0 +1,17 @@
+/Configuration
+/bin
+/vendor
+/web/fileadmin
+/web/index.php
+/web/typo3
+/web/typo3_src
+/web/typo3conf/deprecation_*.log
+# Ignore all extensions except bundled sites
+/web/typo3conf/ext/*
+!/web/typo3conf/ext/base_template
+!/web/typo3conf/ext/base_news
+!/web/typo3conf/ext/base_powermail
+!/web/typo3conf/ext/base_cache_manager
+/web/typo3temp
+/web/uploads
+

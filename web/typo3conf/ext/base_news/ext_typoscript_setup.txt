@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base_news/Configuration/TypoScript/Setup.ts">

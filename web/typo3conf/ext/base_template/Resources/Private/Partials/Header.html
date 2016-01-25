@@ -1,0 +1,85 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<header id="section1" class="parallax-slider">
+	<!--<a id="slider_left"><i class="fa fa-angle-left"></i></a>
+	<a id="slider_right"><i class="fa fa-angle-right"></i></a>-->
+	<!-- Fullscreen Slider -->
+	<!--<div class="slider-container">
+		<div id="fullscreen-slider">
+			<div>
+				<img src="typo3conf/ext/base_template/Resources/Public/img/slider/bx1.jpg" alt="" />
+				<div class="bg-overlay">
+					<div class="slide-content light">
+						<div class="align-center">
+							<p class="welcome">Welcome to the</p>
+							<h1>Agency theme!</h1>
+							<a href="#section2" class="btn btn-1">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img src="typo3conf/ext/base_template/Resources/Public/img/slider/bx2.jpg" alt="" />
+				<div class="bg-overlay">
+					<div class="slide-content light">
+						<div class="align-center">
+							<p class="welcome">Welcome to the</p>
+							<h1>Agency theme!</h1>
+							<a href="#section2" class="btn btn-1">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<img src="typo3conf/ext/base_template/Resources/Public/img/slider/bx3.jpg" alt="" />
+				<div class="bg-overlay">
+					<div class="slide-content light">
+						<div class="align-center">
+							<p class="welcome">Welcome to the</p>
+							<h1>Agency theme!</h1>
+							<a href="#section2" class="btn btn-1">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>-->
+	<!-- /Full Screen Slider -->
+	<div id="navigation">
+		<nav class="navbar navbar-custom cl-effect-21" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 mob-logo">
+						<div class="row">
+							<div class="site-logo">
+								<f:cObject typoscriptObjectPath="lib.logo" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-10 mob-menu">
+						<div class="row">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+									<i class="fa fa-bars"></i>
+								</button>
+							</div>
+							<div class="collapse navbar-collapse" id="menu">
+								<v:page.menu levels="1" as="sections" classActive="active" classCurrent="current">
+									<ul class="nav navbar-nav navbar-right">
+										<f:for each="{sections}" as="section" iteration="iteration">
+											<li>
+												<a href="#section{section.uid}" title="{section.title}">
+													{section.title}
+												</a>
+											</li>
+										</f:for>
+									</ul>
+								</v:page.menu>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>

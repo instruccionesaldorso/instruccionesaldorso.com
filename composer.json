@@ -1,0 +1,30 @@
+{
+    "name": "instruccionesaldorso/portfolio",
+    "description": "Instruccionesaldorso.com portfolio",
+    "authors": [
+        {
+            "name": "Sergio Catala",
+            "email": "info@instruccionesaldorso.com"
+        }
+    ],
+    "repositories": [
+        {
+	    "type": "composer",
+	    "url": "http://composer.typo3.org/"
+	}
+    ],
+    "require": {
+    	"typo3/cms": "7.x",
+	"typo3-ter/realurl": "*",
+	"typo3-ter/news": "*",
+	"typo3-ter/powermail": "*",
+	"typo3-ter/flux": "*",
+	"typo3-ter/vhs": "*"
+    },
+    "extra": {
+      	"typo3/cms": {
+		"cms-package-dir": "vendor/typo3/cms",
+		"web-dir": "web" 
+	}
+    }
+}

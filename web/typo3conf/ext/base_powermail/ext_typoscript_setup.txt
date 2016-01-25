@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:base_powermail/Configuration/TypoScript/Setup.ts">

@@ -1,0 +1,73 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+<f:layout name="Default" />
+
+Render Powermail Form
+{forms} 			All Forms with their Pages and their Fields
+
+
+<f:section name="main">
+
+	<f:flashMessages class="powermail_message powermail_message_error" />
+
+	<f:if condition="{forms}">
+		<f:then>
+			<f:for each="{forms}" as="form">
+				<f:form
+						action="{action}"
+						name="field"
+						enctype="multipart/form-data"
+						additionalAttributes="{vh:Validation.EnableParsleyAndAjax(form:form)}"
+						id="contact"
+						class="reply {form.css} {vh:Misc.MorestepClass(activate:settings.main.moresteps, class:'powermail_morestep')}">
+
+					<f:render partial="Misc/FormError" arguments="{_all}" />
+
+					<f:for each="{form.pages}" as="page">
+						<fieldset class="{page.css}">
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
+									<div class="row">
+										<f:for each="{page.fields}" as="field">
+											<f:if condition="{field.txBasePowermailColumn} == 0">
+												<f:then>
+													<f:render partial="Form/{vh:String.Upper(string:field.type)}" arguments="{field:field}" />
+												</f:then>
+											</f:if>
+										</f:for>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
+									<div class="row">
+										<f:for each="{page.fields}" as="field">
+											<f:if condition="{field.txBasePowermailColumn} == 1">
+												<f:then>
+													<f:render partial="Form/{vh:String.Upper(string:field.type)}" arguments="{field:field}" />
+												</f:then>
+											</f:if>
+										</f:for>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<f:for each="{page.fields}" as="field">
+									<f:if condition="{field.txBasePowermailColumn} == 2">
+										<f:then>
+											<f:render partial="Form/{vh:String.Upper(string:field.type)}" arguments="{field:field}" />
+										</f:then>
+									</f:if>
+								</f:for>
+							</div>
+						</fieldset>
+					</f:for>
+
+					<f:form.hidden name="mail[form]" value="{form.uid}" class="powermail_form_uid" />
+					<f:render partial="Misc/HoneyPod" arguments="{form:form}" />
+				</f:form>
+			</f:for>
+		</f:then>
+		<f:else>
+			<f:translate key="error_no_form" />
+		</f:else>
+	</f:if>
+
+</f:section>

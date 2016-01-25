@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-05-15T16:00:00Z" product-name="base_powermail">
+		<header/>
+		<body>
+			<trans-unit id="tx_powermail_domain_model_fields.tx_base_powermail_column">
+				<source>Column</source>
+			</trans-unit>
+			<trans-unit id="tx_powermail_domain_model_fields.tx_base_powermail_column.0">
+				<source>Left</source>
+			</trans-unit>
+			<trans-unit id="tx_powermail_domain_model_fields.tx_base_powermail_column.1">
+				<source>Right</source>
+			</trans-unit>
+			<trans-unit id="tx_powermail_domain_model_fields.tx_base_powermail_column.2">
+				<source>Center</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

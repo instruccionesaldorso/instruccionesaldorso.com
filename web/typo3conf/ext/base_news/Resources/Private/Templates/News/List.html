@@ -1,0 +1,45 @@
+{namespace n=Tx_News_ViewHelpers}
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<f:if condition="{news}">
+		<f:then>
+			<div class="news-list-view">
+				<f:if condition="{settings.hidePagination}">
+					<f:then>
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+						</f:for>
+					</f:then>
+					<f:else>
+						<n:widget.paginate objects="{news}" as="paginatedNews" configuration="{settings.list.paginate}" initial="{offset:settings.offset,limit:settings.limit}">
+							<div class="content">
+								<div class="container">
+									<div class="row">
+										<div class="posts-block col-lg-9 col-md-9 col-sm-8 col-xs-12">
+											<f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+												<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+											</f:for>
+										</div>
+										<div class="sidebar col-lg-3 col-md-3 col-sm-4 col-xs-12">
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</n:widget.paginate>
+					</f:else>
+				</f:if>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="no-news-found">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
